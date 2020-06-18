@@ -34,7 +34,7 @@ class Search extends Component {
                     <button onClick={this.findGif} id='submitSearch' >Find gif!</button>
                     <ul>
                         {this.props.reduxState.gifReducer.map(gif => (
-                            <li key = {gif.id}><img src = {gif.images}/></li>
+                            <li key = {gif.id}><img src = {gif.images.looping.mp4}/></li>
                         ))}
                     </ul>
                 </div>
