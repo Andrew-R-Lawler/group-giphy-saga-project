@@ -10,14 +10,19 @@ import axios from 'axios';
 
 function* watcherSaga(){
     yield console.log('in watcherSaga');
+    yield 
     
+}
+
+const gifReducer = (state='', action) => {
+    switch (action.type)
 }
 
 const sagaMiddleware = createSagaMiddleware();
 
 const storeInstance = createStore(
     combineReducers({
-
+        gifReducer
     }),
     applyMiddleware( sagaMiddleware, logger ),
 )
