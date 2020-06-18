@@ -7,7 +7,8 @@ require('dotenv').config();
 // Route includes
 const favoriteRouter = require('./routes/favorite.router');
 const categoryRouter = require('./routes/category.router');
-const searchRouter = require('./routes/search.router')
+const searchRouter = require('./routes/search.router');
+const { query } = require('./modules/pool');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -21,7 +22,6 @@ app.use('/api/favorite', favoriteRouter);
 app.use('/api/category', categoryRouter);
 app.use('/search', searchRouter);
 
-axios.get(`http://`)
 // App Set //
 const PORT = process.env.PORT || 5000;
 
