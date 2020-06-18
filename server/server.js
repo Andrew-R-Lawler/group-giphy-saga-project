@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const axios = require('axios');
 
 // Route includes
 const favoriteRouter = require('./routes/favorite.router');
