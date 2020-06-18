@@ -33,10 +33,10 @@ You will need 2 views for the Base Features. You should put some thought into th
     - need an input and a button, input string becomes search parameters
 - Query the `Giphy API Search Endpoint` with the given search string FROM THE SERVER.
     - use input string to run a GET request to the Giphy API Search Endpoint
-- Display the results on the DOM.
-    - use GET request results to map to the DOM
-- Allow a user to Favorite any of the result images. You'll need to think about what information to save to your own database. Generally you only store the minimum needed to show this image again on the Favorites view.
-    - use a select input and a favorite button to post to a new 'favorites' table.
+x - Display the results on the DOM.
+    x - use GET request results to map to the DOM
+x - Allow a user to Favorite any of the result images. You'll need to think about what information to save to your own database. Generally you only store the minimum needed to show this image again on the Favorites view.
+    x - use a select input and a favorite button to post to a new 'favorites' table.
 
 
 ### Favorites View
