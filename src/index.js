@@ -23,7 +23,7 @@ function* getSearch (action) {
     }
 }
 
-const gifReducer = (state={}, action) => {
+const gifReducer = (state=[], action) => {
     switch (action.type) {
         case 'SET_SEARCH':
             return action.payload

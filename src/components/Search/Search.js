@@ -32,6 +32,11 @@ class Search extends Component {
                     <label for='searchBar'>Search for gif: </label>
                     <input onChange={this.searchGif} id='searchBar' type='text' value= {this.props.newSearch}/>
                     <button onClick={this.findGif} id='submitSearch' >Find gif!</button>
+                    <ul>
+                        {this.props.reduxState.gifReducer.map(gif => (
+                            <li key = {gif.id}><img src = {gif.images}/></li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         )
