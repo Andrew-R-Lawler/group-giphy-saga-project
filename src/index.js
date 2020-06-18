@@ -24,4 +24,4 @@ const storeInstance = createStore(
 
 sagaMiddleware.run(watcherSaga);
 
-ReactDOM.render(<App />, document.getElementById('react-root'));
+ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('react-root'));
