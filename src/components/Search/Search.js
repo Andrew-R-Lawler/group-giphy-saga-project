@@ -24,6 +24,14 @@ class Search extends Component {
         this.props.dispatch({ type: 'GET_SEARCH', payload: this.state.newSearch })
     }
 
+    addToFavorites = (event) => {
+        console.log('this is the payload', event.target.value);
+        
+        this.props.dispatch({
+            type: 'POST_GIF', payload: event.target.value
+        })
+    }
+
     render(){
         return(
             <div>
@@ -34,7 +42,7 @@ class Search extends Component {
                     <button onClick={this.findGif} id='submitSearch' >Find gif!</button>
                     <ul>
                         {this.props.reduxState.gifReducer.map(gif => (
-                            <li key = {gif.id}><img src = {gif.images.preview_gif.url} alt="I'm a gif"/><button onClick = {this.addToFavorites}>Add To Favorites</button></li>
+                            <li key = {gif.id}><img src = {gif.images.preview_gif.url} alt="I'm a gif"/><button value={gif.url} onClick = {this.addToFavorites}>Add To Favorites</button></li>
                         ))}
                     </ul>
                 </div>
