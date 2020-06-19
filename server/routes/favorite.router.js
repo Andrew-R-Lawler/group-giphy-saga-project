@@ -17,8 +17,8 @@ router.get('/', (req, res) => {
 
 // add a new favorite 
 router.post('/', (req, res) => {
-  const gifUrl = req.body
-  console.log('POST /api/favorite', gifUrl);
+  const gifUrl = req.body.url
+  console.log('POST /api/favorite');
   pool.query(`INSERT INTO "favorites" ("gif_url")
   VALUES ($1)`, [gifUrl])
   .then((results) => {
