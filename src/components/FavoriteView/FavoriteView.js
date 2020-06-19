@@ -13,7 +13,7 @@ class FavoriteView extends Component {
 
     getFavorites = () => {
         this.props.dispatch({
-            type: 'SET_FAVORITES'
+            type: 'GET_FAVORITES'
         })
     }
     
@@ -23,11 +23,11 @@ class FavoriteView extends Component {
                 <h2>Favorites List</h2>
                 {this.props.reduxState.favoriteReducer.map(item =>
                     <select>
-                        <option value="funny">Funny</option>
-                        <option value="cohort">Cohort</option>
-                        <option value="cartoon">Cartoon</option>
-                        <option value="nsfw">NSFW</option>
-                        <option value="meme">Meme</option>
+                        <option value="1">Funny</option>
+                        <option value="2">Cohort</option>
+                        <option value="3">Cartoon</option>
+                        <option value="4">NSFW</option>
+                        <option value="5">Meme</option>
                     </select>
                     )}
             </div>
