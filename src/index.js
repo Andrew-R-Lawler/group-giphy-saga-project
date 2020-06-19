@@ -15,7 +15,22 @@ function* watcherSaga(){
     yield takeEvery('GET_SEARCH', getSearch)
     yield takeEvery('GET_FAVORITES', getFavorites)
     yield takeEvery('POST_GIF', postGif)
+    yield takeEvery('ADD_CATEGORY', addCategory)
 }
+
+
+
+function* addCategory (action) {
+    try
+    {
+        yield axios.put(`/api/favorite/:${action.payload.id}`, action.payload.category)
+        yield put({ type: 'GET_FAVORITES' })
+    } catch (error) {
+        console.log('FAILED POST:', error)
+    }
+}
+
+
 
 
 function* postGif (action) {
