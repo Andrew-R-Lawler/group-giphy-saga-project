@@ -21,7 +21,7 @@ function* watcherSaga(){
 function* postGif (action) {
     try {
         console.log('POST request data:', action.payload)
-        yield axios.post(`/api/favorite`, action.payload)
+        yield axios.post(`/api/favorite`, {url: action.payload})
         yield put({ type: 'GET_FAVORITES' })
     } catch (error) {
         console.log('FAILED POST:', error)
