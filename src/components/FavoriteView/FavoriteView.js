@@ -4,7 +4,12 @@ import { connect } from 'react-redux';
 class FavoriteView extends Component {
     render() {
         return (
-            <div></div>
+            <div>
+                <h2>Favorite Gifs!</h2>
+                <ul>
+                    {}
+                </ul>
+            </div>
         )
     }
 }
