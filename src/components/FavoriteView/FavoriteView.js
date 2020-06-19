@@ -24,10 +24,12 @@ class FavoriteView extends Component {
         })
     }
 
-    updateCategory = () => {
+    updateCategory = (event) => {
         this.props.dispatch({
             type: 'ADD_CATEGORY',
-            payload: this.state.favorite
+            payload: {
+                category: this.state.favorite,
+                id: event.target.value
         })
     }
     
