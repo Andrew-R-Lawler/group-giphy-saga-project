@@ -30,6 +30,7 @@ class FavoriteView extends Component {
             payload: {
                 category: this.state.favorite,
                 id: event.target.value
+            }
         })
     }
     
