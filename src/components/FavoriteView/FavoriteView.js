@@ -38,17 +38,23 @@ class FavoriteView extends Component {
         return (
             <div>
                 <h2>Favorites List</h2>
+                <div>
+                    <ul>
                 {this.props.reduxState.favoriteReducer.map(item => (
-                    <img src = {item.gif_url} alt = "I'm a gif!" />
-                    <select onChange = {this.handleChange}>
-                        <option value="1">Funny</option>
-                        <option value="2">Cohort</option>
-                        <option value="3">Cartoon</option>
-                        <option value="4">NSFW</option>
-                        <option value="5">Meme</option>
-                    </select>
-                    <button value = {item.id} onClick = {this.updateCategory} >updateCategory</button>
+                    <li>
+                        <img src = {item.gif_url} alt = "I'm a gif!" />
+                        <select onChange = {this.handleChange}>
+                            <option value="1">Funny</option>
+                            <option value="2">Cohort</option>
+                            <option value="3">Cartoon</option>
+                            <option value="4">NSFW</option>
+                            <option value="5">Meme</option>
+                        </select>
+                        <button value = {item.id} onClick = {this.updateCategory} >updateCategory</button>
+                    </li>
                 ))}
+                    </ul>
+                </div>
             </div>
         )
     }
