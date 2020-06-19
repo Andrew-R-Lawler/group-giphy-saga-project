@@ -9,7 +9,9 @@ import logger from 'redux-logger';
 import axios from 'axios';
 
 function* watcherSaga(){
+
     yield console.log('in watcherSaga');
+
     yield takeEvery('GET_SEARCH', getSearch)
     yield takeEvery('GET_FAVORITES', getFavorites)
     yield takeEvery('POST_GIF', postGif)
@@ -18,6 +20,7 @@ function* watcherSaga(){
 
 function* postGif (action) {
     try {
+        console.log('POST request data:', action.payload)
         yield axios.post(`/api/favorite`, action.payload)
         yield put({ type: 'GET_FAVORITES' })
     } catch (error) {
@@ -28,6 +31,7 @@ function* postGif (action) {
 function* getFavorites (action) {
     try {
         const favorites = yield axios.get(`/api/favorite`)
+        console.log(favorites)
         yield put({ type: 'SET_FAVORITES', payload: favorites.data })
     } catch (error) {
         console.log('FAILED POST:', error)
@@ -48,7 +52,7 @@ function* getSearch (action) {
 const favoriteReducer = (state=[], action) => {
     switch (action.type) {
         case 'SET_FAVORITES':
-            return [...state, action.payload]
+            return action.payload
         default:
             return state
     }
@@ -68,7 +72,8 @@ const sagaMiddleware = createSagaMiddleware();
 
 const storeInstance = createStore(
     combineReducers({
-        gifReducer
+        gifReducer,
+        favoriteReducer
     }),
     applyMiddleware( sagaMiddleware, logger ),
 )
