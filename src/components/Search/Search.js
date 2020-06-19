@@ -36,6 +36,7 @@ class Search extends Component {
         return(
             <div>
                 <div>
+                    {console.log(this.state.newSearch)}
                     <h1>Giphy Search!</h1>
                     <label for='searchBar'>Search for gif: </label>
                     <input onChange={this.searchGif} id='searchBar' type='text' value= {this.props.newSearch}/>
