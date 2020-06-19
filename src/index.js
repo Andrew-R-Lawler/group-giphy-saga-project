@@ -36,9 +36,11 @@ function* getFavorites (action) {
 
 function* getSearch (action) {
     try {
-       const searchResults = yield axios.get(`/search/${action.payload}`)
-       yield put({type: 'SET_SEARCH', payload: searchResults.data})
-    } catch (error) {
+        const searchQuery = action.payload
+        console.log('search query', searchQuery);
+        const searchResults = yield axios.get(`/search/:${searchQuery.newSearch}`)
+        yield put({type: 'SET_SEARCH', payload: searchResults.data})
+    }   catch (error) {
         console.log('FAILED GET:', error)
     }
 }
